@@ -33,7 +33,9 @@ def conception_simulation(alpha=1, beta=1):
     ## We are only return 1, so we want to access preg[0]
     preg = rd.choices(("Pregnant", "Not"), weights=(prob_conception, 1-prob_conception),k=1)
     preg = preg[0]
-    mon = 1       ## takes at least one month
+    
+    ## Takes at least one month
+    mon = 1
     
     ## Some status indicators
     consult = 0
@@ -43,6 +45,7 @@ def conception_simulation(alpha=1, beta=1):
         
         ## Aging effect
         prob_conception = prob_conception*0.99
+        ## Note the [0] at the end of the line
         preg = rd.choices(("Pregnant", "Not"), weights=(prob_conception, 1-prob_conception),k=1)[0]
     
         ## Check the status
