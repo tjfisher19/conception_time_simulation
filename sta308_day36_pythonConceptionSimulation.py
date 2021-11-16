@@ -32,7 +32,7 @@ def conception_simulation(alpha=1, beta=1):
     ##  but returns list of size k elements
     ## We are only return 1, so we want to access preg[0]
     preg = rd.choices(("Pregnant", "Not"), weights=(prob_conception, 1-prob_conception),k=1)
-    pret = preg[0]
+    preg = preg[0]
     mon = 1       ## takes at least one month
     
     ## Some status indicators
