@@ -70,4 +70,36 @@ for i in range(1000):
 ## We will edit the below to do some light data analysis
 ##
 
-    
+import numpy as np
+
+np.mean(mons)
+
+
+## By default, numpy does not handle missing values well
+## But I can do a little bit more, to handle the missing values
+
+## pandas is a little bit like the tidyverse, but for python
+import pandas as pd
+
+## Create an array of data, from the list mons
+mons_data = pd.Series(mons)
+
+np.mean(mons_data)
+np.median(mons_data)
+
+np.nanmedian(mons_data)
+np.nanmean(mons_data)
+
+np.std(mons_data)
+
+## mons_data is an object, and has functionality associated with it
+mons_data.isnull()
+np.sum(mons_data.isnull())
+## 40 are missing (you might get a different number, but about 40)
+
+## What about plotting the months?!?!
+
+import matplotlib.pyplot as plt
+
+plt.hist(mons_data)
+
